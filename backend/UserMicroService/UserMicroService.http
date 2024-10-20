@@ -1,0 +1,38 @@
+@UserMicroService_HostAddress = http://localhost:5224
+
+### User Endpoints ###
+
+# Get a user by ID
+GET {{UserMicroService_HostAddress}}/api/users/{id}
+Accept: application/json
+
+# Get all users
+GET {{UserMicroService_HostAddress}}/api/users/
+Accept: application/json
+
+# Create a new user
+POST {{UserMicroService_HostAddress}}/api/users/
+Content-Type: application/json
+Body:
+{
+    "username": "exampleUsername",
+    "email": "example@example.com",
+    "passwordHash": "hashedPassword",
+    "firstName": "John",
+    "lastName": "Doe"
+}
+
+# Update an existing user
+PUT {{UserMicroService_HostAddress}}/api/users/{id}
+Content-Type: application/json
+Body:
+{
+    "id": "your-guid-here",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "new-password"
+}
+
+# Delete a user
+DELETE {{UserMicroService_HostAddress}}/api/users/{id}

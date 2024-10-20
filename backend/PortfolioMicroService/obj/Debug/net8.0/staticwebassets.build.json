@@ -1,0 +1,34 @@
+{
+  "Version": 1,
+  "Hash": "csRE6/8ZHpngR4Q64tHkx0EO8tfIZSOqnk3oJHz7bL8=",
+  "Source": "PortfolioMicroService",
+  "BasePath": "_content/PortfolioMicroService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\VS_Code\\Trading Application\\Backend\\MarketDataMicroService\\MarketDataMicroService.csproj",
+      "Version": 2,
+      "Source": "MarketDataMicroService",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\VS_Code\\Trading Application\\Backend\\OrderMicroService\\OrderMicroService.csproj",
+      "Version": 2,
+      "Source": "OrderMicroService",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GhuQPm7VtIjiXfSSHn0b7XGhNaIyOTIsT6/aeL/Tcio=",
+  "Source": "MarketDataMicroService",
+  "BasePath": "_content/MarketDataMicroService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

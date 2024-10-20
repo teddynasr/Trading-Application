@@ -1,0 +1,29 @@
+@OrderMicroService_HostAddress = http://localhost:5017
+
+###
+# Order APIs
+
+# Get All Orders (Anonymous Access)
+GET {{OrderMicroService_HostAddress}}/api/Order
+
+# Get Orders by User ID (Requires Authorization)
+GET {{OrderMicroService_HostAddress}}/api/Order/{{userId}}
+
+# Get Order by Order ID (Requires Authorization)
+GET {{OrderMicroService_HostAddress}}/api/Order/order/{{orderId}}
+
+# Create a New Order (Requires Authorization)
+POST {{OrderMicroService_HostAddress}}/api/Order
+Content-Type: application/json
+
+{
+    "orderID": "00000000-0000-0000-0000-000000000001",
+    "userID": "00000000-0000-0000-0000-000000000002",
+    "currencyPairID": "00000000-0000-0000-0000-000000000003",
+    "amount": 1000,
+    "price": 1.15
+}
+
+# Delete Order by ID (Requires Authorization)
+DELETE {{OrderMicroService_HostAddress}}/api/Order/{{orderId}}
+

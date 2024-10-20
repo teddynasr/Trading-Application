@@ -1,0 +1,102 @@
+@MarketDataMicroService_HostAddress = http://localhost:5065
+
+###
+# Category APIs
+
+# Get All Categories
+GET {{MarketDataMicroService_HostAddress}}/api/Category
+
+# Get Category by ID
+GET {{MarketDataMicroService_HostAddress}}/api/Category/{{categoryId}}
+
+# Add New Category
+POST {{MarketDataMicroService_HostAddress}}/api/Category
+Content-Type: application/json
+
+{
+    "categoryId": "00000000-0000-0000-0000-000000000001",
+    "categoryName": "Forex",
+    "description": "Foreign Exchange Market",
+    "isActive": true
+}
+
+# Update Category by ID
+PUT {{MarketDataMicroService_HostAddress}}/api/Category/{{categoryId}}
+Content-Type: application/json
+
+{
+    "categoryId": "{{categoryId}}",
+    "categoryName": "Updated Forex",
+    "description": "Updated Foreign Exchange Market",
+    "isActive": true
+}
+
+# Delete Category by ID
+DELETE {{MarketDataMicroService_HostAddress}}/api/Category/{{categoryId}}
+
+###
+# Currency Pair APIs
+
+# Get All Currency Pairs
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair
+
+# Get Currency Pair by ID
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/{{currencyPairId}}
+
+# Get Currency Pair Details by Currency Pair ID
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/details?currencyPairId={{currencyPairId}}
+
+# Get Currency Pairs by Category Name
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/category/{{categoryName}}
+
+# Add New Currency Pair
+POST {{MarketDataMicroService_HostAddress}}/api/CurrencyPair
+Content-Type: application/json
+
+{
+    "pairId": "00000000-0000-0000-0000-000000000001",
+    "baseCurrency": "USD",
+    "quoteCurrency": "EUR",
+    "categoryId": "{{categoryId}}"
+}
+
+# Update Currency Pair by ID
+PUT {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/{{currencyPairId}}
+Content-Type: application/json
+
+{
+    "pairId": "{{currencyPairId}}",
+    "baseCurrency": "GBP",
+    "quoteCurrency": "USD",
+    "categoryId": "{{categoryId}}"
+}
+
+# Delete Currency Pair by ID
+DELETE {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/{{currencyPairId}}
+
+###
+# Forex Rate APIs
+
+# Get At Market Forex Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/forex-rate?baseCurrency=USD&quoteCurrency=EUR
+
+# Get History Forex Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/history-forex-rate?baseCurrency=USD&quoteCurrency=EUR&startDate=2024-01-01&endDate=2024-10-01&candleSize=day
+
+###
+# Crypto Rate APIs
+
+# Get At Market Crypto Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/crypto-rate?baseCurrency=BTC&quoteCurrency=USD
+
+# Get History Crypto Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/history-crypto-rate?baseCurrency=BTC&quoteCurrency=USD&startDate=2024-01-01&endDate=2024-10-01&candleSize=day
+
+###
+# Stock Rate APIs
+
+# Get At Market Stock Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/stock-rate?stock=AAPL
+
+# Get History Stock Rate
+GET {{MarketDataMicroService_HostAddress}}/api/CurrencyPair/history-stock-rate?stock=AAPL&startDate=2024-01-01&endDate=2024-10-01&candleSize=hour

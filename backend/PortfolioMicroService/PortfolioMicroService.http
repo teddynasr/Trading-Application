@@ -1,0 +1,71 @@
+@PortfolioMicroService_HostAddress = http://localhost:5275
+
+###
+# Position APIs
+
+# Get All Positions (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/Position
+
+# Get Position by ID (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/Position/{{positionId}}
+
+# Get Positions by User ID (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/Position/user/{{userId}}
+
+# Get Updated Position by CurrencyPair ID and User ID (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/Position/currencyPair/{{currencyPairId}}/user/{{userId}}
+
+# Update Position by ID (Requires Authorization)
+PUT {{PortfolioMicroService_HostAddress}}/api/Position/{{positionId}}
+Content-Type: application/json
+
+{
+    "positionID": "00000000-0000-0000-0000-000000000001",
+    "userID": "00000000-0000-0000-0000-000000000002",
+    "currencyPairID": "00000000-0000-0000-0000-000000000003",
+    "amount": 5000
+}
+
+###
+# UserPortfolio APIs
+
+# Get All User Portfolios (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/UserPortfolio
+
+# Get User Portfolio by User ID (Requires Authorization)
+GET {{PortfolioMicroService_HostAddress}}/api/UserPortfolio/{{userId}}
+
+# Add New User Portfolio (Requires Authorization)
+POST {{PortfolioMicroService_HostAddress}}/api/UserPortfolio
+Content-Type: application/json
+
+{
+    "portfolioID": "00000000-0000-0000-0000-000000000001",
+    "userID": "00000000-0000-0000-0000-000000000002",
+    "availableBalance": 10000,
+    "investedBalance": 5000
+}
+
+# Update User Portfolio by User ID (Requires Authorization)
+PUT {{PortfolioMicroService_HostAddress}}/api/UserPortfolio/{{userId}}
+
+# Delete User Portfolio by User ID (Requires Authorization)
+DELETE {{PortfolioMicroService_HostAddress}}/api/UserPortfolio/{{userId}}
+
+# Deposit to User Portfolio (Requires Authorization)
+POST {{PortfolioMicroService_HostAddress}}/api/UserPortfolio/deposit
+Content-Type: application/json
+
+{
+    "userId": "00000000-0000-0000-0000-000000000002",
+    "depositAmount": 2000
+}
+
+# Withdraw from User Portfolio (Requires Authorization)
+POST {{PortfolioMicroService_HostAddress}}/api/UserPortfolio/withdraw
+Content-Type: application/json
+
+{
+    "userId": "00000000-0000-0000-0000-000000000002",
+    "withdrawAmount": 1500
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OrderMicroService.props" />
+</Project>
